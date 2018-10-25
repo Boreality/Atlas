@@ -1,5 +1,5 @@
 
-//Input
+#region //Input
 key_left = keyboard_check_direct(ord("A"));
 key_right = keyboard_check_direct(ord("D"));
 key_down = keyboard_check_direct(ord("S"));
@@ -7,8 +7,9 @@ key_jump = keyboard_check_pressed(vk_space);
 key_interact = keyboard_check_pressed(ord("E"));
 key_slide = keyboard_check_pressed(vk_shift);
 key_jump_hold = keyboard_check(vk_space);
+#endregion
 
-//Calculate horizontal movement
+#region//Calculate horizontal movement
 var dir = key_right - key_left;
 hsp += dir * hsp_acc;
 if(dir == 0)
@@ -18,7 +19,7 @@ if(dir == 0)
 	hsp = Approach(hsp,0,hsp_fric_final);
 }
 hsp = clamp(hsp,-hsp_walk,hsp_walk);
-
+#endregion
 //Calc vertical movement
 if(!umbrella) //normal
 {	
@@ -79,7 +80,7 @@ vsp -= vsp_frac;
 #endregion
 
 
-//Horizontal collision
+#region//Horizontal collision
 if(place_meeting(x + hsp,y,obj_wall))
 {
 	
@@ -88,12 +89,12 @@ if(place_meeting(x + hsp,y,obj_wall))
 	hsp = 0;
 	hsp_frac = 0;
 }
-
+#endregion
 
 //Horizontal move
 x += hsp;
 
-//Vertical Collision
+#region//Vertical Collision
 if(place_meeting(x,y + vsp, obj_wall))
 {
 	var onepixel = sign(vsp);
@@ -101,14 +102,16 @@ if(place_meeting(x,y + vsp, obj_wall))
 	vsp = 0;
 	vsp_frac = 0;	
 }
+#endregion
 //Vertical Move
 y += vsp;
 
-//Umbrella
+#region//Umbrella
 if(distance_to_object(obj_wall) > 35) flight = true;
 else flight = false;
 
-if((!onground) and (flight)) && (key_jump_hold) && (vsp > 0)
+//umbrella
+if(!onground) && (flight) && (key_jump_hold) && (vsp > 0) 
 {
 	umbrella = true;
 
@@ -116,7 +119,7 @@ if((!onground) and (flight)) && (key_jump_hold) && (vsp > 0)
 
 	umbrella = false;
 }
-
+#endregion
 
 
 //Calc current status
