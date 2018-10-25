@@ -1,0 +1,1 @@
+obj_weather.rain = true;

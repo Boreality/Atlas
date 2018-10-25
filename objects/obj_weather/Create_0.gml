@@ -1,0 +1,6 @@
+rain = false;
+snow = false;
+
+
+
+

@@ -1,0 +1,1 @@
+init_door(rm_street0,obj_player);
