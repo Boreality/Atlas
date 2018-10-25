@@ -49,9 +49,7 @@ if(anticipation)
 	if(anticipation_timer <= 0) anticipation = false;
 	if(onground)
 	{
-		jumpbuffer = 0;
-		vsp = vsp_jump;
-		vsp_frac = 0;
+		jump();
 		coyote_timer = 0;	
 		anticipation_timer = anticipation_timer_max;
 		anticipation = false;
@@ -63,15 +61,13 @@ if(jumpbuffer > 0) or (coyote_timer > 0)
 	jumpbuffer--;
 	if(key_jump) 
 	{
-		jumpbuffer = 0;
-		vsp = vsp_jump;
-		vsp_frac = 0;
+		jump();
 		coyote_timer = 0;
 	}
 }
 vsp = clamp(vsp,-vsp_max,vsp_max);
 
-//Dump fractions and get final integer speeds
+#region//Dump fractions and get final integer speeds
 
 hsp += hsp_frac;
 vsp += vsp_frac;
@@ -80,20 +76,7 @@ vsp_frac = frac(vsp);
 hsp -= hsp_frac;
 vsp -= vsp_frac;
 
-
-////Bbox collision
-//var bbox_side;
-//if(hsp > 0) bbox_side = bbox_right; else  bbox_side = bbox_left;
-//var check_top = tilemap_get_at_pixel(tilemap,bbox_side + hsp, bbox_top);
-//var check_bottom = tilemap_get_at_pixel(tilemap,bbox_side + hsp, bbox_bottom)
-
-
-//if(check_top != 0) or (check_bottom != 0)
-////{
-////	if(hsp > 0) x = x - (x % 32) + 31;
-	
-////}
-
+#endregion
 
 
 //Horizontal collision
@@ -106,17 +89,7 @@ if(place_meeting(x + hsp,y,obj_wall))
 	hsp_frac = 0;
 }
 
-//if(place_meeting(x + hsp,y,obj_door))
-//{
-	
-//	if(other.image_index == 0)
-//	{
-//		var onepixel = sign(hsp);
-//		while (!place_meeting(x+onepixel,y,obj_door)) x += onepixel;
-//		hsp = 0;
-//		hsp_frac = 0;
-//	}
-//}
+
 //Horizontal move
 x += hsp;
 
@@ -132,7 +105,7 @@ if(place_meeting(x,y + vsp, obj_wall))
 y += vsp;
 
 //Umbrella
-if(distance_to_object(obj_wall) > 40) flight = true;
+if(distance_to_object(obj_wall) > 35) flight = true;
 else flight = false;
 
 if((!onground) and (flight)) && (key_jump_hold) && (vsp > 0)
@@ -189,6 +162,6 @@ else
 
 //Weather
 
-//if(key_interact) effect_create_above(ef_explosion,x,y,10,c_gray);
+if(key_interact) effect_create_above(ef_smokeup,x,y,10,c_gray);
 
 

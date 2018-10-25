@@ -207,6 +207,14 @@
             }
         },
         {
+            "Key": "50480fb2-9d47-41bc-9ab8-c872a1a9a87d",
+            "Value": {
+                "id": "7175a526-5123-49e2-9c3f-dae310004957",
+                "resourcePath": "objects\\obj_smokeup\\obj_smokeup.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "546056f1-ef0c-4d8b-8eb9-b79dd11fd031",
             "Value": {
                 "id": "c4f56eb5-3045-43a2-9118-b4c07141a8ed",
@@ -359,6 +367,14 @@
             }
         },
         {
+            "Key": "925bd35d-ac94-4d4b-8927-e9c9c03385d2",
+            "Value": {
+                "id": "8031c606-6e06-4a28-8370-9d9323d22d42",
+                "resourcePath": "scripts\\jump\\jump.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "92a1099a-05c2-404b-98a6-99816a8e00a5",
             "Value": {
                 "id": "72475d89-673b-4d5a-b901-8f97e17f6f15",
@@ -388,14 +404,6 @@
                 "id": "c58e4acb-d950-41c2-8f46-2e95fac3bb45",
                 "resourcePath": "scripts\\Approach\\Approach.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "9b10d2cb-5632-4f93-89b1-7954aaf7a9ef",
-            "Value": {
-                "id": "c48cf281-f778-4348-add7-70f56747914d",
-                "resourcePath": "rooms\\asd\\asd.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
@@ -507,6 +515,14 @@
             "Value": {
                 "id": "41713878-e96f-47d7-a7d0-b8198e9a4d76",
                 "resourcePath": "sprites\\spr_lamppost\\spr_lamppost.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "bdfd3f45-80d3-4a06-b050-a58d60d3f6d5",
+            "Value": {
+                "id": "60826b06-521e-41ed-8b19-13f10217fc50",
+                "resourcePath": "sprites\\spr_player_rest\\spr_player_rest.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -748,7 +764,8 @@
         "61b8dcfc-073e-4f97-8dd6-df19aeff7095",
         "d1cd3a20-ccc0-4f23-af37-3227af453349",
         "69d1b91c-778d-4cac-994b-bf5663a2e08b",
-        "0f10f51d-d528-43e4-865d-1d546ce3e966"
+        "0f10f51d-d528-43e4-865d-1d546ce3e966",
+        "925bd35d-ac94-4d4b-8927-e9c9c03385d2"
     ],
     "tutorial": ""
 }

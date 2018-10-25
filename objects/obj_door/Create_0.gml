@@ -25,7 +25,7 @@ top.y = backdrop_midpoint;
 bottom.y = backdrop_midpoint;
 top.x = id.x;
 bottom.x = id.x; 
-/*
+/* 
 Door planning
 
 I want it to be not a regular wooden door. Sliding doors up/dowwards when sideways
