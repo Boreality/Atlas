@@ -1,7 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-/// @description Insert description here
-// You can write your code in this editor
+
 //Input
 key_left = keyboard_check_direct(ord("A"));
 key_right = keyboard_check_direct(ord("D"));
@@ -41,15 +38,35 @@ else
 }
 
 //Ground Jump
+if(key_jump)
+{
+	if(!onground)anticipation = true;	
 
-if(jumpbuffer > 0)
-{	
-	jumpbuffer--;
-	if(key_jump)
+}
+if(anticipation)
+{
+	anticipation_timer--;
+	if(anticipation_timer <= 0) anticipation = false;
+	if(onground)
 	{
 		jumpbuffer = 0;
 		vsp = vsp_jump;
 		vsp_frac = 0;
+		coyote_timer = 0;	
+		anticipation_timer = anticipation_timer_max;
+		anticipation = false;
+	}
+}
+
+if(jumpbuffer > 0) or (coyote_timer > 0)
+{	
+	jumpbuffer--;
+	if(key_jump) 
+	{
+		jumpbuffer = 0;
+		vsp = vsp_jump;
+		vsp_frac = 0;
+		coyote_timer = 0;
 	}
 }
 vsp = clamp(vsp,-vsp_max,vsp_max);
@@ -115,7 +132,10 @@ if(place_meeting(x,y + vsp, obj_wall))
 y += vsp;
 
 //Umbrella
-if(!onground) && (key_jump_hold) && (vsp > 0)
+if(distance_to_object(obj_wall) > 40) flight = true;
+else flight = false;
+
+if((!onground) and (flight)) && (key_jump_hold) && (vsp > 0)
 {
 	umbrella = true;
 
@@ -129,7 +149,17 @@ if(!onground) && (key_jump_hold) && (vsp > 0)
 //Calc current status
 
 onground = place_meeting(x,y+1,obj_wall)
-if(onground) jumpbuffer = 6;
+if(onground)
+{
+	jumpbuffer = 6;
+	coyote_timer = coyote_timer_max;
+}
+else coyote_timer--;
+//Coyote time
+
+
+
+
 
 //Adjust Sprite
 if(hsp != 0) image_xscale = sign(hsp);
@@ -142,7 +172,7 @@ if(!onground)
 	else
 	{
 		sprite_index = spr_player_air;
-		if(vsp >= 0) image_index = 1; else image_index = 0;
+		if(vsp >= 0) image_index = 0; else image_index = 1;
 	}
 	image_speed = 0;
 	

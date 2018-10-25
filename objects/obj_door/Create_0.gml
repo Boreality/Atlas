@@ -17,7 +17,7 @@ backdrop_top = bbox_top + (sprite_get_height(spr_door_backdrop)/10);
 backdrop_bottom = bbox_bottom + (sprite_get_height(spr_door_backdrop)/10);
 opening_speed = 2;
 
-top = instance_create_layer(id.x,y,"Player",obj_door_platform);
+top = instance_create_layer(id.x,y,"Player",obj_wall);
 below = instance_create_layer(id.x,y,"Player",obj_door_platform);
 top.direction = 180;
 

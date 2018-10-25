@@ -23,6 +23,14 @@ grv = 0.3;
 
 jumpbuffer = 0;
 
+flight = false;
+
+anticipation = false;
+anticipation_timer_max = 20;
+anticipation_timer = anticipation_timer_max;
+
+coyote_timer_max = 10;
+coyote_timer = coyote_timer_max;
 
 //Tile collisions
 tilemap = layer_tilemap_get_id("Collision");
