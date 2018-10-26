@@ -107,7 +107,10 @@ if(place_meeting(x,y + vsp, obj_wall))
 y += vsp;
 
 #region//Umbrella
-if(distance_to_object(obj_wall) > 35) flight = true;
+if(distance_to_object(obj_wall) > 35) 
+{
+    flight = true;
+}
 else flight = false;
 
 //umbrella
