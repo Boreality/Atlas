@@ -743,6 +743,14 @@
             }
         },
         {
+            "Key": "f1280fad-c82c-4cd9-8f94-dc56de56d7e9",
+            "Value": {
+                "id": "fa654d5f-c842-4935-a2b9-28e1acc90148",
+                "resourcePath": "sprites\\asdas\\asdas.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f418569b-3bdd-4706-a0e4-364317f54032",
             "Value": {
                 "id": "fea3cb8c-bf46-4e79-be1e-e4efdc5fe0f8",
