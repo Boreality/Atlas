@@ -1,1 +1,1 @@
-obj_weather.rain = true;
+ obj_weather.rain = true;

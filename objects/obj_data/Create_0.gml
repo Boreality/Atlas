@@ -16,5 +16,6 @@ enum dest
 //global.target_xpos = rm0_xpos_default;
 //global.target_ypos = rm0_ypos_default;
 global.target = 0;
+global.targetrm = 0;
 
 room_goto_next(); //Leave for menu

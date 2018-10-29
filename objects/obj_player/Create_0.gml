@@ -12,6 +12,7 @@ hsp_fric_air = 0.35;
 hsp_walk = 4;
 
 umbrella = false;
+umbrella_check = false;
 air_check = true;
 
 vsp_jump = -15;

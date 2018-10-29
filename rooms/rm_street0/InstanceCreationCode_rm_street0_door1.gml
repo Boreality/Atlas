@@ -1,0 +1,1 @@
+init_door(rm_street0,rm_street0_door2)

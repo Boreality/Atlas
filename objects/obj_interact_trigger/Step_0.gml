@@ -2,7 +2,9 @@ if(player_collide){
 	colliding = true; 
 	if(interact){
 		global.target = destination[dest.target];
-		room_goto(destination[dest.rm]);
+		global.targetrm = destination[dest.rm];
+		//room_goto(destination[dest.rm]);
+		SlideTransition(TRANS_MODE.GOTO);
 	}	
 }
 else colliding = false;

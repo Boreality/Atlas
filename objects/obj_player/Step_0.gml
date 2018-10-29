@@ -3,10 +3,12 @@
 key_left = keyboard_check_direct(ord("A"));
 key_right = keyboard_check_direct(ord("D"));
 key_down = keyboard_check_direct(ord("S"));
-key_jump = keyboard_check_pressed(vk_space);
 key_interact = keyboard_check_pressed(ord("E"));
 key_slide = keyboard_check_pressed(vk_shift);
+
+key_jump = keyboard_check_pressed(vk_space);
 key_jump_hold = keyboard_check(vk_space);
+key_jump_released = keyboard_check_released(vk_space);
 #endregion
 
 #region//Calculate horizontal movement
@@ -107,21 +109,39 @@ if(place_meeting(x,y + vsp, obj_wall))
 y += vsp;
 
 #region//Umbrella
-if(distance_to_object(obj_wall) > 35) 
+if(distance_to_object(obj_wall) > 35) && (vsp > 0) 
 {
     flight = true;
 }
 else flight = false;
 
 //umbrella
-if(!onground) && (flight) && (key_jump_hold) && (vsp > 0) 
+//if(!onground) && (flight) && (key_jump_hold) && (vsp > 0) 
+//{
+//	umbrella = true;
+
+//} else {
+
+//	umbrella = false;
+//}
+
+if(key_jump_hold) && (umbrella_check)
 {
-	umbrella = true;
-
-} else {
-
-	umbrella = false;
+	if(flight) 
+	{
+		umbrella = true;
+		umbrella_check = false;
+	}
+	
 }
+if(key_jump_released) || (onground)
+{
+	umbrella = false;
+	umbrella_check = true;
+}
+
+
+
 #endregion
 
 
