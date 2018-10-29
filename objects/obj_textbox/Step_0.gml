@@ -1,8 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
-if(obj_player.key_interact){
+
+if(interact){
 	//only increase page, if page +1 is less than total number of entries
-	if(page +1 < array_length_1d(text)){
+	if(page +1 < array_length_2d(text,creator.text_section)){
 		page += 1;
 	} else {
 		instance_destroy();
