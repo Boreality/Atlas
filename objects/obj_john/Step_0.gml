@@ -1,12 +1,15 @@
 //movement
 if(!interact_check) hsp = 1;
 else hsp = 0;
+<<<<<<< HEAD
 
 if(hsp != 0) image_xscale = sign(hsp);
+=======
+>>>>>>> 5d6dfb36fb1a3066cc900364f0bba34c465c66d9
 x += hsp;
-//text
 
 
+<<<<<<< HEAD
 //old
 // if(check[0]) && (global.cake)
 // {
@@ -52,6 +55,31 @@ else
 // unless store in another data strucutre but honestly thats a bit of an ass
 
 
+=======
+
+vsp += grv;
+if(place_meeting(x,y+hsp,obj_wall))
+{
+	vsp = 0;	
+}
+y += vsp;
+
+//text
+//if(check[0]) && (global.cake)
+//{
+//	text_section = d.cake;
+//	check[0] = false;
+//}
+//else
+//{
+//	if(check[1]) && (global.bull)
+//	{
+//		text_section = d.bull;
+//		check[1] = false;
+//	}
+	
+//}
+>>>>>>> 5d6dfb36fb1a3066cc900364f0bba34c465c66d9
 
 var middleTextBox = (sprite_get_width(spr_textbox) /2)
 var npcHeight = sprite_get_height(spr_john);
