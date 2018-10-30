@@ -5,6 +5,6 @@ if(interact){
 		page += 1;
 	} else {
 		instance_destroy();
-		creator.alarm[1] = 1; //In creaors (ex. johns) alarm event, will trigger the code required after 1 frame
+		creator.alarm[1] = 1; //In creators (ex. johns) alarm event, will trigger the code required after 1 frame
 	}
 }
