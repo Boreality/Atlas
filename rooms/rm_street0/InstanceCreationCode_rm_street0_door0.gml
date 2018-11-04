@@ -1,0 +1,1 @@
+init_door(rm_menu,obj_player)

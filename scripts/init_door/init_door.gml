@@ -1,4 +1,4 @@
-/// init_door( RoomName, x, y)
+/// @desc init_door( RoomName, target)
 
 destination[dest.rm] = argument0;
 destination[dest.target] = argument1;

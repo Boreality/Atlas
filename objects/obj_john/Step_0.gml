@@ -1,13 +1,19 @@
 //movement
-if(!interact_check) hsp = 1;
-else hsp = 0;
-
+//if(!interact_check) hsp = 1;
+//else hsp = 0;
+//
 
 if(hsp != 0) image_xscale = sign(hsp);
 
 x += hsp;
 
-
+vsp += grv;
+if(place_meeting(x,y+hsp,obj_wall))
+{
+	vsp = 0;	
+}
+y += vsp;
+//--- ALL DIFFERENT TEXT CODES-----
 
 //old
 // if(check[0]) && (global.cake)
@@ -33,34 +39,31 @@ x += hsp;
 // }
 
 //alt
-if(global.cake)
-{
-	text_section = d.cake;
-	global.cake = false;
-}
-else
-{
-	if(global.bull)
-	{
-		text_section = d.bull;
-		global.bull = false;
-	}
-	else
-	{
-		text_section = d.final;	
-	}
-}
+//if(interact_check)
+//{
+//	if(global.cake)
+//	{
+//		text_section = d.cake;
+//		global.cake = false;
+//	}
+//	else
+//	{
+//		if(global.bull)
+//		{
+//			text_section = d.bull;
+//			global.bull = false;
+//		}
+//		else
+//		{
+//			text_section = d.intro;	
+//		}
+//	}
+//}
 //problem with this is that if ever want to check if this was the case, cant.
 // unless store in another data strucutre but honestly thats a bit of an ass
 
 
-vsp += grv;
-if(place_meeting(x,y+hsp,obj_wall))
-{
-	vsp = 0;	
-}
-y += vsp;
-
+//original
 //text
 //if(check[0]) && (global.cake)
 //{
