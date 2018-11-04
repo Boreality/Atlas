@@ -1,4 +1,5 @@
-
+image_xscale = 0.2;
+image_yscale = 0.2;
 #region //Input
 key_left = keyboard_check_direct(ord("A"));
 key_right = keyboard_check_direct(ord("D"));
@@ -161,7 +162,8 @@ else coyote_timer--;
 
 
 //Adjust Sprite
-if(hsp != 0) image_xscale = sign(hsp);
+/*
+if(hsp != 0) image_xscale = sign(hsp); 
 if(!onground)
 {	
 	if(umbrella)
@@ -185,7 +187,7 @@ else
 	}
 	else sprite_index = spr_player;
 }
-
+*/
 //Weather
 
 if(key_interact) effect_create_above(ef_smokeup,x,y,10,c_gray);
