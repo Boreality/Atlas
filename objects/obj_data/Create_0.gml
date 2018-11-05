@@ -22,7 +22,7 @@ global.targetrm = 0;
 #endregion
 
 //Dialogue flags
-global.cake = 1;
+global.cake = false;
 global.bull = false;
 
 
