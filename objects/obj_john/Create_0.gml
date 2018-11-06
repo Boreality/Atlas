@@ -16,6 +16,10 @@ my_text[d.intro,2] = "...";
 
 my_text[d.cake,0] = "You ate my cake";
 my_text[d.cake,1] = "How fucking dare you";
+my_text[d.cake,2] = "That was my best cake!";
+my_text[d.cake,3] = "Why would you do this?";
+my_text[d.cake,4] = "My whole life is in tatters";
+my_text[d.cake,5] = "Begone! Let me wallow in my grief. \nOh god the horror";
 
 my_text[d.bull,0] = "So the new bull racing is in town.";
 my_text[d.bull,1] = "Personally I preffer watching crab buckets";
