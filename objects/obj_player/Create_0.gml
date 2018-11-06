@@ -11,6 +11,7 @@ hsp_fric_ground = 0.70;
 hsp_fric_air = 0.35;
 hsp_walk = 4;
 
+
 umbrella = false;
 umbrella_check = false;
 air_check = true;
@@ -32,6 +33,9 @@ anticipation_timer = anticipation_timer_max;
 
 coyote_timer_max = 10;
 coyote_timer = coyote_timer_max;
+
+scale = 0.2;
+
 
 //Tile collisions
 tilemap = layer_tilemap_get_id("Collision");

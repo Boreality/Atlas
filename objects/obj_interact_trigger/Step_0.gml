@@ -9,6 +9,14 @@ if(player_collide){
 }
 else colliding = false;
 
+if(place_meeting(x,y,obj_cursor)){
+	if(mouse_check_button(mb_left)){
+		global.target = destination[dest.target];
+		global.targetrm = destination[dest.rm];
+		SlideTransition(TRANS_MODE.GOTO);		
+		
+	}
+}
 
 //Door system re-planning
 /*

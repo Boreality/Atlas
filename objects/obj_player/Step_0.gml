@@ -1,16 +1,19 @@
-image_xscale = 0.2;
-image_yscale = 0.2;
+image_xscale = scale;
+image_yscale = scale;
 #region //Input
 key_left = keyboard_check_direct(ord("A"));
 key_right = keyboard_check_direct(ord("D"));
 key_down = keyboard_check_direct(ord("S"));
 key_interact = keyboard_check_pressed(ord("E"));
-key_slide = keyboard_check_pressed(vk_shift);
+key_sprint = keyboard_check_pressed(vk_shift);
 
 key_jump = keyboard_check_pressed(vk_space);
 key_jump_hold = keyboard_check(vk_space);
 key_jump_released = keyboard_check_released(vk_space);
 #endregion
+
+
+
 
 #region//Calculate horizontal movement
 var dir = key_right - key_left;
@@ -40,6 +43,7 @@ else
 	//vsp += 0.02;	
 	
 }
+
 
 //Ground Jump
 if(key_jump)
@@ -162,32 +166,33 @@ else coyote_timer--;
 
 
 //Adjust Sprite
-/*
-if(hsp != 0) image_xscale = sign(hsp); 
-if(!onground)
-{	
-	if(umbrella)
-	{
-		sprite_index = spr_player_hover;
-	}
-	else
-	{
-		sprite_index = spr_player_air;
-		if(vsp >= 0) image_index = 0; else image_index = 1;
-	}
-	image_speed = 0;
+
+if(hsp != 0) image_xscale = (sign(hsp)/5); 
+
+//if(!onground)
+//{	
+//	if(umbrella)
+//	{
+//		sprite_index = spr_player_hover;
+//	}
+//	else
+//	{
+//		sprite_index = spr_player_air;
+//		if(vsp >= 0) image_index = 0; else image_index = 1;
+//	}
+//	image_speed = 0;
 	
-}
-else
-{
-	if(hsp != 0)
-	{
-		sprite_index = spr_player_run;
-		if(onground) image_speed = 3;
-	}
-	else sprite_index = spr_player;
-}
-*/
+//}
+//else
+//{
+//	if(hsp != 0)
+//	{
+//		sprite_index = spr_player_run;
+//		if(onground) image_speed = 3;
+//	}
+//	else sprite_index = spr_player;
+//}
+
 //Weather
 
 if(key_interact) effect_create_above(ef_smokeup,x,y,10,c_gray);
