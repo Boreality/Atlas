@@ -1,12 +1,28 @@
 
-if(player_collide) && (!instance_exists(obj_text)) && (interact)
+if(player_collide) && (!instance_exists(obj_text))
 {
-	with(instance_create_layer(x,y-sprite_height,"GUI",obj_text))
+	if(!automatic)
 	{
-		text = other.text;	
-		length = string_length(text);
+		if(interact)
+		{
+			with(instance_create_layer(x,y-sprite_height,"GUI",obj_text))
+			{
+				text = other.text;	
+				length = string_length(text);
 		
+			}
+			with(obj_camera) follow = other.id;
+		}
 	}
-	with(obj_camera) follow = other.id;
+	else
+	{
+		with(instance_create_layer(x,y-sprite_height,"GUI",obj_text))
+			{
+				text = other.text;	
+				length = string_length(text);
+		
+			}
+			with(obj_camera) follow = other.id;
+	}
 }
 

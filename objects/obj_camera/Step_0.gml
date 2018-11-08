@@ -21,8 +21,8 @@ shake_remain = max(0,shake_remain-((1/shake_length)*shake_magnitude));	//reducin
 
 
 //Update object position	smooth camera movement
-x += (xTo - x) / 10;
-y += (yTo - y) / 10;
+x += (xTo - x) / 20;
+y += (yTo - y) / 20;
 
 //update camera view
 camera_set_view_pos(cam, x - view_w_half, y - view_h_half );

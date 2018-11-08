@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+has_control = true;
 
 hsp = 0;
 vsp = 0;
@@ -16,8 +17,8 @@ umbrella = false;
 umbrella_check = false;
 air_check = true;
 
-vsp_jump = -15;
-vsp_max = 10;
+vsp_jump = -20;
+vsp_max = 11;
 
 onground = false;
 

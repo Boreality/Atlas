@@ -55,9 +55,23 @@
             "value": "\"default\"",
             "varName": "text",
             "varType": 2
+        },
+        {
+            "id": "112068e3-5d31-487f-b7e3-77d72c1b284e",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "False",
+            "varName": "automatic",
+            "varType": 3
         }
     ],
     "solid": false,
-    "spriteId": "ea9f5d97-5659-44ff-a2cf-f57c5a774109",
+    "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true
 }

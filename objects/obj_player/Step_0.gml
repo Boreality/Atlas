@@ -1,6 +1,8 @@
-image_xscale = scale;
+
 image_yscale = scale;
 #region //Input
+if(has_control)
+{
 key_left = keyboard_check_direct(ord("A"));
 key_right = keyboard_check_direct(ord("D"));
 key_down = keyboard_check_direct(ord("S"));
@@ -10,6 +12,7 @@ key_sprint = keyboard_check_pressed(vk_shift);
 key_jump = keyboard_check_pressed(vk_space);
 key_jump_hold = keyboard_check(vk_space);
 key_jump_released = keyboard_check_released(vk_space);
+}
 #endregion
 
 
