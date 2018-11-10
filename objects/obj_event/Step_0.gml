@@ -11,7 +11,7 @@ switch(room)
 			{
 				obj_player.has_control = false;
 				obj_camera.follow = start_pos;
-				obj_player.hsp = 3;
+				obj_player.hsp = 2;
 			}
 			else
 			{
