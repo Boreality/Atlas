@@ -36,6 +36,7 @@ coyote_timer_max = 10;
 coyote_timer = coyote_timer_max;
 
 scale = 0.2;
+image_xscale = 0.2;
 
 
 //Tile collisions

@@ -1,9 +1,7 @@
- 
-
 cam = view_camera[0];
-//camera_set_view_size(cam,obj_display.ideal_width,obj_display.ideal_height)
 follow = obj_player;
-
+camera_set_view_size(cam,obj_data.ideal_width,obj_data.ideal_height);
+window_set_fullscreen(true);
 
 view_w_half = camera_get_view_width(cam) * 0.5;
 view_h_half = camera_get_view_height(cam) * 0.5;

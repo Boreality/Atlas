@@ -1,11 +1,23 @@
-if(player_collide){
+if(place_meeting(x,y,obj_player)){
 	colliding = true; 
-	if(interact){
+	if(automatic)
+	{
 		global.target = destination[dest.target];
 		global.targetrm = destination[dest.rm];
 		//room_goto(destination[dest.rm]);
 		SlideTransition(TRANS_MODE.GOTO);
-	}	
+	}
+	if(!automatic)
+	{
+		if(interact)
+		{
+			global.target = destination[dest.target];
+			global.targetrm = destination[dest.rm];
+			//room_goto(destination[dest.rm]);
+			SlideTransition(TRANS_MODE.GOTO);
+		}	
+	}
+
 }
 else colliding = false;
 

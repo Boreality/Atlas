@@ -7,7 +7,7 @@ switch(room)
 		//Walking in through side, then pausing and getting a tutorial dialogue
 		if(check_walkIn)
 		{
-			if(obj_player.x <= obj_camera.x)
+			if(obj_player.x <= start_pos.x)
 			{
 				obj_player.has_control = false;
 				obj_camera.follow = start_pos;
@@ -17,7 +17,7 @@ switch(room)
 			{
 				obj_player.has_control = true;
 				obj_camera.follow = obj_player;
-				instance_destroy(start_pos);
+				//instance_destroy(start_pos);
 				check_walkIn = false;
 			}
 		}
@@ -34,8 +34,7 @@ switch(room)
 		}
 		if(obj_player.key_left) if(obj_player.key_right) instance_destroy(first_dialogue_box);
 		
-		//jump textobx
-		
+		//jump textbox
 		with(obj_player)
 		{
 			if(place_meeting(x,y,tut_jump)) && (obj_event.jump_dialogue_box == noone)
@@ -79,6 +78,49 @@ switch(room)
 		
 	break;
 	
+	case rm_tutorial1:
+		//Gliding tutorial
+		with(obj_player)
+		{
+			//making camera zooming out and creating text
+			if(place_meeting(x,y,tut_glide)) && (other.glide_check) && (obj_event.glide_dialogue_box == noone)
+			{
+				obj_camera.follow = tut_glide_cam;
+				other.glide_check = false;
+				with(instance_create_layer(x + 50,textPlacey,"Text",obj_text))
+				{
+					text = "Hold SPACE while in the air to glide;"	
+					obj_event.glide_dialogue_box = id;
+				}
+			
+			}
+			
+			//Destroying text
+			with(other)
+			{
+				if(glide_dialogue_box != noone)
+				{
+					glide_dialogue_timer--;
+					if(obj_player.umbrella) && (glide_dialogue_timer <= 0)
+					{
+						instance_destroy(glide_dialogue_box);
+					}
+				}
+			}
+			
+			
+			//stopping camera zoom out once made it to other side of building
+			if(place_meeting(x,y,tut_glide_cancel)) && (other.glide_cancel_check)
+			{
+				obj_camera.follow = id;	
+				other.glide_cancel_check = false;
+			}
+		}
+	
+	
+	
+	
+	break;
 	
 
 }
