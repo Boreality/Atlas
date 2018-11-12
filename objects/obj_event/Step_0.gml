@@ -21,13 +21,15 @@ switch(room)
 					obj_camera.follow = obj_player;
 					//instance_destroy(start_pos);
 					check_walkIn = false;
+					first_pause_coordsx = obj_player,x;
+					first_pause_coordsy = obj_player.y;
 				}
 			}
 			else first_pause--;	
 		
 			if(first_pause <= 0) && (first_dialogue_box == noone)
 			{
-				with(instance_create_layer(obj_player.x,textPlacey,"Text",obj_text))
+				with(instance_create_layer(first_pause_coordsx,first_pause_coordsy - 100,"Text",obj_text))
 				{
 					text = "Press A and D to move Left and Right";
 					other.first_dialogue_box = id; 
@@ -86,6 +88,9 @@ switch(room)
 		with(obj_player)
 		{
 			//making camera zooming out and creating text
+			//Make the start and cancel a toggling thing, so if activate one, need to 
+			//either get out of range or touch other to remoze zoom effect
+			//Also need to do something if player fucks up glide. Have another object to catch failure
 			if(place_meeting(x,y,tut_glide)) && (other.glide_check) && (obj_event.glide_dialogue_box == noone)
 			{
 				obj_camera.follow = tut_glide_cam;
@@ -95,11 +100,10 @@ switch(room)
 					text = "Hold SPACE while in the air to glide;"	
 					obj_event.glide_dialogue_box = id;
 				}
-			
 			}
 			
 			//Destroying text
-			with(other)
+			with(other) //in obj_event
 			{
 				if(glide_dialogue_box != noone)
 				{
@@ -111,17 +115,17 @@ switch(room)
 				}
 			}
 			
-			
 			//stopping camera zoom out once made it to other side of building
-			if(place_meeting(x,y,tut_glide_cancel)) && (other.glide_cancel_check)
+			//Create tut_glide_cancel1 under place where can fall
+			if(place_meeting(x,y,tut_glide_cancel)) && (other.glide_cancel_check) or (place_meeting(x,y,tut_glide_cancel1))
 			{
 				obj_camera.follow = id;	
 				other.glide_cancel_check = false;
 			}
 		}
-	
-	
-	
+	break;
+	case rm_layer_bottom0: //Game properly starts
+	    
 	
 	break;
 	
