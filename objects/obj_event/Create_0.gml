@@ -15,6 +15,7 @@ glide_dialogue_timer = glide_dialogue_timer_max;
 check_walkIn = true;
 glide_check = true;
 glide_cancel_check = true;
+tut0_completed = false;
 
 
 //ID holders

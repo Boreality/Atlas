@@ -30,7 +30,8 @@
         "41668a6a-bb8e-485f-af98-2633999082ad",
         "82540102-c6b3-49f1-bddf-16074941279b",
         "75f79cfa-ac6d-490f-b00e-67f55e3feba2",
-        "d0239768-444a-4804-b444-d9d99b538b48"
+        "d0239768-444a-4804-b444-d9d99b538b48",
+        "7040148f-887b-4f1d-be3d-1a199a2a37c2"
     ],
     "IsDnD": false,
     "layers": [
@@ -311,7 +312,8 @@
             "inheritVisibility": false,
             "instances": [
 {"name": "start_pos","id": "05b062c5-6175-4ae8-a6a0-aa2b990d72dd","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "start_pos","objId": "5c37da2b-60ec-4c0f-9a47-57dd38289416","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.0","x": 544,"y": 2048},
-{"name": "tut_pass","id": "41668a6a-bb8e-485f-af98-2633999082ad","colour": { "Value": 4294967295 },"creationCodeFile": "InstanceCreationCode_tut_pass.gml","creationCodeType": ".gml","ignore": false,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "tut_pass","objId": "5c37da2b-60ec-4c0f-9a47-57dd38289416","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.0","x": 2368,"y": 1408}
+{"name": "tut_pass","id": "41668a6a-bb8e-485f-af98-2633999082ad","colour": { "Value": 4294967295 },"creationCodeFile": "InstanceCreationCode_tut_pass.gml","creationCodeType": ".gml","ignore": false,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "tut_pass","objId": "5c37da2b-60ec-4c0f-9a47-57dd38289416","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.0","x": 2368,"y": 1408},
+{"name": "tut_exit","id": "7040148f-887b-4f1d-be3d-1a199a2a37c2","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "tut_exit","objId": "5c37da2b-60ec-4c0f-9a47-57dd38289416","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 4,"mvc": "1.0","x": 3296,"y": 2000}
             ],
             "layers": [
 

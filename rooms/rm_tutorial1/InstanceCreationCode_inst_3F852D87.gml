@@ -1,1 +1,1 @@
-init_door(rm_tutorial,tutorial_door0)
+ init_door(rm_tutorial,tut_exit)
