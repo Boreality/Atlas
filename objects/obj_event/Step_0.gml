@@ -21,7 +21,7 @@ switch(room)
 					obj_camera.follow = obj_player;
 					//instance_destroy(start_pos);
 					check_walkIn = false;
-					first_pause_coordsx = obj_player,x;
+					first_pause_coordsx = obj_player.x;
 					first_pause_coordsy = obj_player.y;
 				}
 			}
@@ -117,17 +117,20 @@ switch(room)
 			
 			//stopping camera zoom out once made it to other side of building
 			//Create tut_glide_cancel1 under place where can fall
+			
 			if(place_meeting(x,y,tut_glide_cancel)) && (other.glide_cancel_check) or (place_meeting(x,y,tut_glide_cancel1))
 			{
+					
 				obj_camera.follow = id;	
 				other.glide_cancel_check = false;
 			}
+			
 		}
 	break;
-	case rm_layer_bottom0: //Game properly starts
+	//case rm_layer_bottom0: //Game properly starts
 	    
 	
-	break;
+	//break;
 	
 
 }
