@@ -1,3 +1,23 @@
+
+
+if(check[0]) && (global.cake)
+{
+	text_section = tural.die;
+	check[0] = false;
+}
+else
+{
+	if(check[1]) && (global.bull)
+	{
+		text_section = tural.battery;
+		check[1] = false;
+	}
+	
+}
+
+
+
+
 var middleTextBox = (sprite_get_width(spr_textbox) /2)
 var npcHeight = sprite_get_height(spr_john);
 
