@@ -2,7 +2,7 @@
     "id": "a53b2d43-d2dd-46af-b145-d8c9f763f1c6",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_taylor",
+    "name": "spr_tural",
     "For3D": false,
     "HTile": false,
     "VTile": false,

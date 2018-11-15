@@ -51,22 +51,38 @@ my_text[tural.thing,1] = "Whoever wrote these isnt even trying anymore.";
 
 my_text[tural.die,0] = "Die elsewhere";
 my_text[tural.die,1] = "Oh! I have actually gotten quite good at this one"
-my_text[tural.die,0] = "This is probably the most fun one to play as well. Heck, do you want to play this one afterwards?";
-my_text[tural.die,0] = "Well, for now, lets go";
+my_text[tural.die,2] = "This is probably the most fun one to play as well. Heck, do you want to play this one afterwards?";
+my_text[tural.die,3] = "Well, for now, lets go";
 
 my_text[tural.final,0] = "Nice meeting you!";
 name = "Tural";
 
-// check[0] = true;
-// check[1] = true;
-// check[2] = true;
+check[0] = true;
+check[1] = true;
+check[2] = true;
+check[3] = true;
+check[4] = true;
+check[5] = true;
+check[6] = true;
 
+//music checks
+check[10] = true;
+check[11] = true;
+check[12] = true;
+check[13] = true;
 choice_length = array_length_1d(check)
-i = 0;
-check[i] = false; i+=1;
-check[i] = false; i+=1;
-check[i] = false; i+=1;
-check[i] = false; i+=1;
-check[i] = false; i+=1;
-check[i] = false; i+=1;
-check[i] = false; i+=1;
+
+
+//song timers
+battery_song_timer_max = audio_sound_length(snd_battery) * room_speed;
+battery_song_timer = battery_song_timer_max;
+
+ktulu_song_timer_max = audio_sound_length(snd_ktulu) * room_speed;
+ktulu_song_timer = ktulu_song_timer_max;
+
+die_song_timer_max = audio_sound_length(snd_die) * room_speed;
+die_song_timer = die_song_timer_max;
+
+sanitarium_song_timer_max =audio_sound_length(snd_sanitarium) * room_speed;
+sanitarium_song_timer = sanitarium_song_timer_max;
+

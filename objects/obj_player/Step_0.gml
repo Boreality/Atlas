@@ -1,4 +1,3 @@
-
 image_yscale = scale;
 #region //Input
 if(has_control)
@@ -14,8 +13,6 @@ key_jump_hold = keyboard_check(vk_space);
 key_jump_released = keyboard_check_released(vk_space);
 }
 #endregion
-
-
 
 
 #region//Calculate horizontal movement
@@ -44,9 +41,7 @@ else
 	}
 	
 	//vsp += 0.02;	
-	
 }
-
 
 //Ground Jump
 if(key_jump)
@@ -93,7 +88,6 @@ vsp -= vsp_frac;
 #region//Horizontal collision
 if(place_meeting(x + hsp,y,obj_wall))
 {
-	
 	var onepixel = sign(hsp);
 	while (!place_meeting(x+onepixel,y,obj_wall)) x += onepixel;
 	hsp = 0;
@@ -147,14 +141,9 @@ if(key_jump_released) || (onground)
 	umbrella = false;
 	umbrella_check = true;
 }
-
-
-
 #endregion
 
-
 //Calc current status
-
 onground = place_meeting(x,y+1,obj_wall)
 if(onground)
 {
@@ -162,11 +151,6 @@ if(onground)
 	coyote_timer = coyote_timer_max;
 }
 else coyote_timer--;
-//Coyote time
-
-
-
-
 
 //Adjust Sprite
 
@@ -199,5 +183,3 @@ if(hsp != 0) image_xscale = (sign(hsp)/5);
 //Weather
 
 if(key_interact) effect_create_above(ef_smokeup,x,y,10,c_gray);
-
-
