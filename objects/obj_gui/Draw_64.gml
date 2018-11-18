@@ -5,5 +5,7 @@ draw_text(50,100,"Onground: " + string(obj_player.onground));
 draw_text(50,120,"Project Atlas, a game by Boreality");
 draw_text(50,150,"Cake: " + string(global.cake));
 draw_text(50,170,"Bull: " + string(global.bull));
+draw_text(50,190,"Thing timer" + string(obj_tural.thing_song_timer));
+
 //if(instance_exists(obj_door))draw_text(50,159,string(obj_door.backdrop_midpoint));
 

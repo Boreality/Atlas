@@ -1,15 +1,6 @@
 colliding = false;
 my_textbox = noone;
 
-
-
-enum susan {
-	intro,
-	cake,
-	bull,
-	final
-	
-}
 text_section = susan.intro;
 
 my_text[susan.intro,0] = "Hi, I'm Susan!";

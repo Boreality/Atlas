@@ -2,7 +2,7 @@
 
 if(check[0]) && (global.cake)
 {
-	text_section = tural.die;
+	text_section = tural.thing;
 	check[0] = false;
 }
 else
@@ -14,97 +14,56 @@ else
 	}
 	
 }
-
 #region enabliong music and animation.
+
 //Activate after a textbox has finished and this is the result.
-if(my_textbox == noone)
+if(textbox_destruction)
 {
-	switch(tural)
+	switch(text_section)
 	{
-		case tural.battery:
-			if(check[10])
-			{
-				//play music
-				audio_play_sound(snd_battery,3,false);
-		
-				//enable animation
-				//sprite_index = spr_tural_guitar;
-		
-				// using audio_sound_length(), make timer for when to go back to normal
-				check[10] = false;	
-				
-			}
-		break;
-		case tural.die:
-			if(check[11])
-			{
-				audio_play_sound(snd_die,3,false);
-				//sprite_index = spr_tural_guitar;
-				check[11] = false;	
-			}
-			else
-			{
-				die_song_timer--;
-				if(die_song_timer <= 0)
-				{
-					audio_stop_sound(snd_die);
-					
-				}
-				
-			}
-		break;
-		case tural.sanitarium:
-			audio_play_sound(snd_sanitarium,3,false);	
-		
-		break;
-		
-		
+		case tural.battery:		play_battery();		break;
+		case tural.die:			play_die();			break;
+		case tural.sanitarium:	play_sanitarium();	break;
+		case tural.ktulu:		play_ktulu();		break;
+		case tural.creeping:	play_creeping();	break;
+		case tural.thing:		play_thing();		break;
+		case tural.bell:		play_bell();		break;
 	}
-	
 }
-else //Decativate all effects
-{
-	sprite_index = spr_tural;
-	audio_stop_sound(snd_sanitarium);
-	audio_stop_sound(snd_die);
-	audio_stop_sound(snd_battery);
+else
 
-	
-}
-	
-
-#endregion
-
-#region Activating song and sprite work on timer
-
+//textbox_destruction = false;
 
 
 #endregion
-
-
-
+	
 var middleTextBox = (sprite_get_width(spr_textbox) /2)
 var npcHeight = sprite_get_height(spr_john);
 
-if(player_collide){
-	colliding = true;
-	//If havent already made textbox, make one
-	if(interact)
-	{
-		if(my_textbox == noone){
-			my_textbox = instance_create_layer(x - middleTextBox,y - (npcHeight * 3),"Text",obj_textbox);
-			my_textbox.text = my_text;
-			my_textbox.creator = id;
+//if(!playing_guitar)
+//{
+	if(player_collide){
+		colliding = true;
+		//If havent already made textbox, make one
+		if(interact)
+		{
+			if(my_textbox == noone){
+				textbox_destruction = false;
+				my_textbox = instance_create_layer(x - middleTextBox,y - (npcHeight * 3),"Text",obj_textbox);
+				my_textbox.text = my_text;
+				my_textbox.creator = id;
+			}
 		}
 	}
-}
-else{
-	if(my_textbox != noone){
-		instance_destroy(my_textbox);
-		my_textbox = noone;
+	else{
+		if(my_textbox != noone){
+			instance_destroy(my_textbox);
+			textbox_destruction = true;
+			my_textbox = noone;
+		}
+		colliding = false;
 	}
-	colliding = false;
-}
+//}
 
 
 

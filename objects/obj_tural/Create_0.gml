@@ -1,23 +1,10 @@
 
 colliding = false;
 my_textbox = noone;
+textbox_destruction = false;
 
 
 
-enum tural {
-	intro,
-	accept,
-	decline,
-	die,
-	battery,
-	ktulu,
-	creeping,
-	sanitarium,
-	thing,
-	run_out,
-	final
-	
-}
 text_section = tural.intro;
 
 my_text[tural.intro,0] = "Oh hey.";
@@ -70,12 +57,20 @@ check[10] = true;
 check[11] = true;
 check[12] = true;
 check[13] = true;
+check[14] = true;
+check[15] = true;
+check[16] = true;
+check[17] = true;
 choice_length = array_length_1d(check)
 
+playing_guitar = false;
 
 //song timers
 battery_song_timer_max = audio_sound_length(snd_battery) * room_speed;
 battery_song_timer = battery_song_timer_max;
+
+creeping_song_timer_max = audio_sound_length(snd_creeping) * room_speed;
+creeping_song_timer = creeping_song_timer_max;
 
 ktulu_song_timer_max = audio_sound_length(snd_ktulu) * room_speed;
 ktulu_song_timer = ktulu_song_timer_max;
@@ -86,3 +81,8 @@ die_song_timer = die_song_timer_max;
 sanitarium_song_timer_max =audio_sound_length(snd_sanitarium) * room_speed;
 sanitarium_song_timer = sanitarium_song_timer_max;
 
+bell_song_timer_max = audio_sound_length(snd_bell) * room_speed;
+bell_song_timer = bell_song_timer_max;
+
+thing_song_timer_max = audio_sound_length(snd_thing) * room_speed;
+thing_song_timer = thing_song_timer_max;

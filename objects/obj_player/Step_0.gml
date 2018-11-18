@@ -156,8 +156,8 @@ else coyote_timer--;
 
 if(hsp != 0) image_xscale = (sign(hsp)/5); 
 
-//if(!onground)
-//{	
+if(!onground)
+{	
 //	if(umbrella)
 //	{
 //		sprite_index = spr_player_hover;
@@ -169,16 +169,27 @@ if(hsp != 0) image_xscale = (sign(hsp)/5);
 //	}
 //	image_speed = 0;
 	
-//}
-//else
-//{
+}
+else
+{
+	if(sprite_index == spr_player_air) //this activates as soon as player lands
+	{
+		repeat(5)
+		{
+			with(instance_create_layer(x,bbox_bottom,"Effects",obj_dust))	
+			{
+				vsp = 0;
+				
+			}
+		}
+	}
 //	if(hsp != 0)
 //	{
 //		sprite_index = spr_player_run;
 //		if(onground) image_speed = 3;
 //	}
 //	else sprite_index = spr_player;
-//}
+}
 
 //Weather
 

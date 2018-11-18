@@ -2,13 +2,7 @@ colliding = false;
 my_textbox = noone;
 interact_check = false;
 
-enum d
-{
-	intro,
-	cake,
-	bull,
-	final
-}
+
 text_section = d.intro;
 my_text[d.intro,0] = "Hi, I'm John!";
 my_text[d.intro,1] = "What a lovley afternoon, dont you think?";
