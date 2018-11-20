@@ -14,143 +14,16 @@ key_jump_released = keyboard_check_released(vk_space);
 }
 #endregion
 
-
-#region//Calculate horizontal movement
-var dir = key_right - key_left;
-hsp += dir * hsp_acc;
-if(dir == 0)
-{
-	var hsp_fric_final = hsp_fric_ground;
-	if(!onground) hsp_fric_final = hsp_fric_air;
-	hsp = Approach(hsp,0,hsp_fric_final);
-}
-hsp = clamp(hsp,-hsp_walk,hsp_walk);
-#endregion
-//Calc vertical movement
-if(!umbrella) //normal
-{	
-	vsp += grv;
-	air_check = true;
-}
-else
-{
-	if(air_check)
-	{
-		vsp = 1;	
-		air_check = false;
-	}
-	
-	//vsp += 0.02;	
-}
-
-//Ground Jump
-if(key_jump)
-{
-	if(!onground)anticipation = true;	
-
-}
-if(anticipation)
-{
-	anticipation_timer--;
-	if(anticipation_timer <= 0) anticipation = false;
-	if(onground)
-	{
-		jump();
-		coyote_timer = 0;	
-		anticipation_timer = anticipation_timer_max;
-		anticipation = false;
-	}
-}
-
-if(jumpbuffer > 0) or (coyote_timer > 0)
-{	
-	jumpbuffer--;
-	if(key_jump) 
-	{
-		jump();
-		coyote_timer = 0;
-	}
-}
-vsp = clamp(vsp,-vsp_max,vsp_max);
-
-#region//Dump fractions and get final integer speeds
-
-hsp += hsp_frac;
-vsp += vsp_frac;
-hsp_frac = frac(hsp);
-vsp_frac = frac(vsp);
-hsp -= hsp_frac;
-vsp -= vsp_frac;
-
-#endregion
-
-
-#region//Horizontal collision
-if(place_meeting(x + hsp,y,obj_wall))
-{
-	var onepixel = sign(hsp);
-	while (!place_meeting(x+onepixel,y,obj_wall)) x += onepixel;
-	hsp = 0;
-	hsp_frac = 0;
-}
-#endregion
-
-//Horizontal move
+player_hmovement_();
+player_vmovement();
+player_jump();
+player_fracdump();
+player_collision_horizontal();
 x += hsp;
-
-#region//Vertical Collision
-if(place_meeting(x,y + vsp, obj_wall))
-{
-	var onepixel = sign(vsp);
-	while (!place_meeting(x,y+onepixel,obj_wall)) y += onepixel;
-	vsp = 0;
-	vsp_frac = 0;	
-}
-#endregion
-//Vertical Move
+player_collision_vertical();
 y += vsp;
-
-#region//Umbrella
-if(distance_to_object(obj_wall) > 35) && (vsp > 0) 
-{
-    flight = true;
-}
-else flight = false;
-
-//umbrella
-//if(!onground) && (flight) && (key_jump_hold) && (vsp > 0) 
-//{
-//	umbrella = true;
-
-//} else {
-
-//	umbrella = false;
-//}
-
-if(key_jump_hold) && (umbrella_check)
-{
-	if(flight) 
-	{
-		umbrella = true;
-		umbrella_check = false;
-	}
-	
-}
-if(key_jump_released) || (onground)
-{
-	umbrella = false;
-	umbrella_check = true;
-}
-#endregion
-
-//Calc current status
-onground = place_meeting(x,y+1,obj_wall)
-if(onground)
-{
-	jumpbuffer = 6;
-	coyote_timer = coyote_timer_max;
-}
-else coyote_timer--;
+player_umbrella();
+player_onground_coyote();
 
 //Adjust Sprite
 
@@ -170,17 +43,13 @@ if(!onground)
 //	image_speed = 0;
 	
 }
-else
+else // if onground
 {
 	if(sprite_index == spr_player_air) //this activates as soon as player lands
 	{
 		repeat(5)
 		{
-			with(instance_create_layer(x,bbox_bottom,"Effects",obj_dust))	
-			{
-				vsp = 0;
-				
-			}
+			with(instance_create_layer(x,bbox_bottom,"Effects",obj_dust))	vsp = 0;
 		}
 	}
 //	if(hsp != 0)
@@ -191,6 +60,5 @@ else
 //	else sprite_index = spr_player;
 }
 
-//Weather
-
+//standard effects
 if(key_interact) effect_create_above(ef_smokeup,x,y,10,c_gray);

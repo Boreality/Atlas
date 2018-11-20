@@ -20,8 +20,9 @@ if(die_song_timer <= 0)
 	audio_stop_sound(snd_die);
 	die_song_timer = die_song_timer_max;
 	check[10] = true;	
-	textbox_destruction = false;
+	
 }
+
 
 
 

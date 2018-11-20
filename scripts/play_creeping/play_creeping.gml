@@ -20,7 +20,7 @@ if(creeping_song_timer <= 0)
 	audio_stop_sound(snd_creeping);
 	creeping_song_timer = creeping_song_timer_max;
 	check[13] = true;	
-	textbox_destruction = false;
+	
 }
 
 

@@ -20,7 +20,7 @@ if(ktulu_song_timer <= 0)
 	audio_stop_sound(snd_ktulu);
 	ktulu_song_timer = die_song_timer_max;
 	check[14] = true;	
-	textbox_destruction = false;
+	
 }
 
 

@@ -20,7 +20,7 @@ if(bell_song_timer <= 0)
 	audio_stop_sound(snd_bell);
 	bell_song_timer = bell_song_timer_max;
 	check[15] = true;	
-	textbox_destruction = false;
+
 }
 
 

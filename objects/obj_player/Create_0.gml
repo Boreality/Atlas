@@ -43,10 +43,5 @@ image_xscale = 0.2;
 tilemap = layer_tilemap_get_id("Collision");
 
 //positioning
-
 x = global.target.x;
 y = global.target.y;
-
-
-
-
