@@ -431,6 +431,14 @@
             }
         },
         {
+            "Key": "6140102b-0617-43a1-907d-ea7b7b0292b2",
+            "Value": {
+                "id": "816c091f-a646-49ee-a6a1-fe3bcac66aa7",
+                "resourcePath": "sprites\\spr_player_run\\spr_player_run.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "61b8dcfc-073e-4f97-8dd6-df19aeff7095",
             "Value": {
                 "id": "e6cec813-f48d-4181-a176-913c49b93a51",
@@ -554,7 +562,7 @@
             "Key": "7fdb8486-281c-4409-8870-e183be240032",
             "Value": {
                 "id": "2214d1fe-b58b-44ff-8857-4c56f1c0477e",
-                "resourcePath": "sprites\\spr_player_run\\spr_player_run.yy",
+                "resourcePath": "sprites\\spr_player_runqwe\\spr_player_runqwe.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -788,6 +796,14 @@
                 "id": "0a32d559-fec7-4260-acb5-7780a122ed17",
                 "resourcePath": "sprites\\spr_tural\\spr_tural.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a6dc55ac-3cdf-4a9a-8409-44499b975d4f",
+            "Value": {
+                "id": "afd65e2e-6c66-4cfc-89ce-c02fef28f8c6",
+                "resourcePath": "sounds\\snd_secret\\snd_secret.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1124,6 +1140,14 @@
                 "id": "6c93423a-5868-4052-b097-d06571920669",
                 "resourcePath": "objects\\obj_data\\obj_data.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "f014fda7-562c-48e4-a1e6-1a86001a2713",
+            "Value": {
+                "id": "ccb3d75d-2a21-4ff9-a9f4-83d192534e5a",
+                "resourcePath": "sprites\\spr_fuckHind\\spr_fuckHind.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

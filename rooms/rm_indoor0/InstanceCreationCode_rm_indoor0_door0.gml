@@ -1,1 +1,1 @@
-init_door(rm_street0,obj_player);
+init_door(rm_layer_bottom,rm_layer_bottom_0_door_0);

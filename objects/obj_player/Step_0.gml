@@ -27,7 +27,12 @@ player_onground_coyote();
 
 //Adjust Sprite
 
-if(hsp != 0) image_xscale = (sign(hsp)/5); 
+if(hsp != 0)
+{
+	sprite_index = spr_player_run;
+	image_xscale = (sign(hsp)/5); 
+}
+else sprite_index = spr_player;
 
 if(!onground)
 {	

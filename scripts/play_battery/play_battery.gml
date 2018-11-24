@@ -20,7 +20,7 @@ if(battery_song_timer <= 0)
 	audio_stop_sound(snd_battery);
 	battery_song_timer = battery_song_timer_max;
 	check[11] = true;	
-	
+	textbox_destruction = false;
 }
 
 

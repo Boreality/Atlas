@@ -1,0 +1,1 @@
+init_door(rm_layer_bottom,rm_layer_bottom_door1)

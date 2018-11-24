@@ -11,6 +11,8 @@ else
 	//load game
 	var file = file_text_open_read(SAVEFILE);
 	var target = file_text_read_real(file);
+	global.cake = file_text_read_real(file);
+	global.bull = file_text_read_real(file);
 	file_text_close(file);
 	init_door(target,obj_player);
 }

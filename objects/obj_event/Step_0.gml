@@ -127,11 +127,29 @@ switch(room)
 			
 		}
 	break;
-	//case rm_layer_bottom0: //Game properly starts
-	    
+	case rm_layer_bottom: //Game properly starts
+		with(obj_player)
+		{
+			if(place_meeting(x,y,fuck_hind_cam)) { obj_camera.follow = fuck_hind;	
+			}
+			else obj_camera.follow = obj_player;
+		}
 	
-	//break;
+	break;
+	case rm_indoor0:
+		with(obj_player)
+		{
+			if(place_meeting(x,y,box_secret))
+			{
+				audio_play_sound(snd_secret,4,0);
+				instance_destroy(box_secret);
+				layer_set_visible("Secret",false);
+				with(instance_create_layer(rm_indoor0_door1.x,rm_indoor0_door1.y,"Light",obj_light)) color = c_yellow;
+			}
 	
+		}
+	
+	break;
 
 }
 
