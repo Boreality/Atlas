@@ -543,6 +543,14 @@
             }
         },
         {
+            "Key": "7d343d09-4f02-4331-9834-c1cd232e1f05",
+            "Value": {
+                "id": "d47b4394-1e2e-42b2-868f-c12516b45bc7",
+                "resourcePath": "notes\\Verticle Jump.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
             "Key": "7d9ae2bc-0b97-4b52-b143-b45f28dec678",
             "Value": {
                 "id": "de0337e3-eb5d-4f7f-bb86-1698058eb31b",

@@ -18,7 +18,7 @@ umbrella_check = false;
 air_check = true;
 
 vsp_jump = -20;
-vsp_max = 11;
+vsp_max = 11.5;
 
 onground = false;
 

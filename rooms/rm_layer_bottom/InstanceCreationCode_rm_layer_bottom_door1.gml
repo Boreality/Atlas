@@ -1,1 +1,1 @@
-init_door(rm_indoor0,rm_indoor0_door1)
+init_door(rm_indoor0,rm_indoor0_door1);

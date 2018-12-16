@@ -1,0 +1,2 @@
+Player can jump 5 32pixels.
+Or 6 cubes if selecting a fallthrough platform
