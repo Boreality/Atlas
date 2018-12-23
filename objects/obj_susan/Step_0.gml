@@ -16,7 +16,7 @@ else
 	
 }
 
-var middleTextBox = (sprite_get_width(spr_textbox) /2)
+var middleTextBox = (sprite_get_width(spr_textbox) /2);
 var npcHeight = sprite_get_height(spr_john);
 
 if(player_collide){

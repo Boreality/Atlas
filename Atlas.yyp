@@ -351,6 +351,14 @@
             }
         },
         {
+            "Key": "504f6776-00b9-48ad-a928-3b16b24c8558",
+            "Value": {
+                "id": "456e0097-5e19-424b-890d-3733ec51220c",
+                "resourcePath": "sprites\\spr_statues\\spr_statues.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "546056f1-ef0c-4d8b-8eb9-b79dd11fd031",
             "Value": {
                 "id": "c4f56eb5-3045-43a2-9118-b4c07141a8ed",
@@ -860,6 +868,14 @@
                 "id": "789b245b-0df2-4fba-9b71-bf7364fe1415",
                 "resourcePath": "views\\aa77ebed-6afa-4921-b779-016ef573f497.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ab35b59a-11fc-4905-927d-b06e5bc1ec05",
+            "Value": {
+                "id": "38f4f916-6561-40fc-92a9-9c49d48dfeb8",
+                "resourcePath": "rooms\\rm_heist\\rm_heist.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
