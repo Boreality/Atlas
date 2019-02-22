@@ -36,33 +36,35 @@ else sprite_index = spr_player;
 
 if(!onground)
 {	
-//	if(umbrella)
-//	{
-//		sprite_index = spr_player_hover;
-//	}
-//	else
-//	{
-//		sprite_index = spr_player_air;
-//		if(vsp >= 0) image_index = 0; else image_index = 1;
-//	}
-//	image_speed = 0;
+	if(umbrella)
+	{
+		sprite_index = spr_player_hover;
+	}
+	else
+	{
+		sprite_index = spr_player_air;
+		if(vsp >= 0) image_index = 0; else image_index = 1;
+	}
+	image_speed = 0;
 	
 }
 else // if onground
 {
+	
 	if(sprite_index == spr_player_air) //this activates as soon as player lands
 	{
 		repeat(5)
 		{
 			with(instance_create_layer(x,bbox_bottom,"Effects",obj_dust))	vsp = 0;
+			show_message("run");
 		}
 	}
-//	if(hsp != 0)
-//	{
-//		sprite_index = spr_player_run;
-//		if(onground) image_speed = 3;
-//	}
-//	else sprite_index = spr_player;
+	if(hsp != 0)
+	{
+		sprite_index = spr_player_run;
+		if(onground) image_speed = 3;
+	}
+	else sprite_index = spr_player;
 }
 
 //standard effects
