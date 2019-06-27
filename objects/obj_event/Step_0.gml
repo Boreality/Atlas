@@ -150,7 +150,28 @@ switch(room)
 		}
 	
 	break;
-
+	case rm_heist:
+		with(obj_player)
+		{
+			if(place_meeting(x,y,glass_ceiling)){
+					
+			}
+			if(place_meeting(x,y,glass_guards)){
+				instance_destroy(guard_hole);
+			}
+			if(place_meeting(x,y,lever)){
+				draw_interact();
+				if(key_interact){
+					door.open = !door.open;
+				}
+				
+					
+			}
+		}
+	
+	
+	
+	break;
 }
 
 
