@@ -1,0 +1,20 @@
+
+
+#Init Door
+destination[dest.rm] = argument0;
+destination[dest.target] = argument1;
+
+#Slide Transition
+with(obj_transition)
+{
+	mode = argument[0];
+	if(argument_count > 1)
+	{
+		target = argument[1];	
+	}
+	
+	
+}
+
+#Door objects in rooms
+init_door(rm_menu,obj_player)

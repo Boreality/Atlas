@@ -175,6 +175,14 @@
             }
         },
         {
+            "Key": "24a54976-fbae-493d-ac36-cfd1f570ca6b",
+            "Value": {
+                "id": "df8b7451-22f8-4746-a60c-a30fed963a5b",
+                "resourcePath": "sprites\\spr_cleanupText\\spr_cleanupText.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "254288ce-709e-0d0c-69fc-55473d9ddf7a",
             "Value": {
                 "id": "794c51f6-38a5-7c82-1fc8-fac2fcffe596",
@@ -564,6 +572,14 @@
                 "id": "3c118815-1980-6452-dc5c-2af9960af9f0",
                 "resourcePath": "scripts\\player_collision_vertical\\player_collision_vertical.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "740dbd33-c570-4218-a7a2-6c43af9bbf99",
+            "Value": {
+                "id": "f56f5f5f-e304-42be-9834-4376b4452dd2",
+                "resourcePath": "notes\\Door sys to unity.yy",
+                "resourceType": "GMNotes"
             }
         },
         {

@@ -49,12 +49,6 @@ Have values:
 
 when at static stages (open,close), hard set the values in case it is incorrect
 
-
-
-    
-
-
-
 */
 
 
